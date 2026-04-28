@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>追月之旅·青甘黑独山6日穿越</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient-bg" aria-hidden="true">
+      <img id="ambientImage" class="ambient-bg__image" src="assets/cover.JPG" alt="" />
+      <div class="ambient-bg__wash"></div>
+      <div class="ambient-bg__grain"></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#cover" aria-label="回到封面">
+        <span class="brand__mark"></span>
+        <span>追月之旅</span>
+      </a>
+      <nav class="day-nav" aria-label="6日路线导航" id="dayNav"></nav>
+    </header>
+
+    <main>
+      <section class="hero frame" id="cover" data-scene="cover">
+        <div class="hero__copy">
+          <p class="eyebrow">Xining to Dunhuang · Road Movie</p>
+          <h1>追月之旅<br />青甘黑独山6日穿越</h1>
+          <p class="hero__line">从西宁出发，穿过盐湖、戈壁、黑山与沙海。</p>
+        </div>
+        <div class="hero__panel glass-panel">
+          <p>6 Days</p>
+          <strong>西宁 → 敦煌</strong>
+          <span>沿 G315 向西，追一场荒野里的月光。</span>
+        </div>
+      </section>
+
+      <section class="route-board" aria-label="动态路线图">
+        <div class="section-kicker">Route</div>
+        <h2>路线逐段点亮</h2>
+        <div class="route-map" id="routeMap"></div>
+      </section>
+
+      <section class="story" id="story" aria-label="行程分镜">
+        <div class="story__sticky glass-panel">
+          <p class="section-kicker">Timeline</p>
+          <h2 id="activeTitle">D1 茶卡盐湖</h2>
+          <p id="activeCaption">湖风把第一天吹成蓝色。</p>
+          <div class="timeline-control">
+            <label for="journeyRange">拖动快进旅程</label>
+            <input id="journeyRange" type="range" min="0" max="5" value="0" step="1" />
+          </div>
+          <div class="timeline-meta">
+            <span id="activeRoute">西宁 → 青海湖 → 茶卡镇</span>
+            <span id="activeMileage">300km</span>
+          </div>
+        </div>
+
+        <div class="story__frames" id="storyFrames"></div>
+      </section>
+
+      <section class="interlude frame" data-scene="food" id="food">
+        <div class="interlude__content glass-panel">
+          <p class="section-kicker">Food Roll</p>
+          <h2>美食集合</h2>
+          <p>把味道留给路上的空镜。</p>
+        </div>
+      </section>
+
+      <section class="checklist frame" data-scene="back" id="checklist">
+        <div class="checklist__content">
+          <p class="section-kicker">Before Departure</p>
+          <h2>必备物品 & 注意事项</h2>
+          <div class="note-grid">
+            <article>
+              <h3>车与路</h3>
+              <p>大柴旦到冷湖路段补给稀疏，见到油站就加满。</p>
+            </article>
+            <article>
+              <h3>地图</h3>
+              <p>冷湖一带信号弱，提前下载离线地图。</p>
+            </article>
+            <article>
+              <h3>预约</h3>
+              <p>莫高窟提前约，冷湖住宿尽早订。</p>
+            </article>
+            <article>
+              <h3>装备</h3>
+              <p>防晒、墨镜、防风面巾、饮水和干粮都要带足。</p>
+            </article>
+            <article>
+              <h3>高原</h3>
+              <p>前两天放慢节奏，青海湖海拔约 3200m。</p>
+            </article>
+            <article>
+              <h3>安全</h3>
+              <p>G315 不在公路中间拍照，停车先看路况。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
