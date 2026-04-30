@@ -707,6 +707,14 @@ h3 {
     min-height: 58svh;
   }
 
+  .scene-card__toggle {
+    display: none;
+  }
+
+  .scene-card__copy {
+    display: none;
+  }
+
   .interlude {
     grid-template-columns: 1fr;
   }
@@ -759,14 +767,6 @@ h3 {
 
   .scene-card__photo {
     min-height: 52svh;
-  }
-
-  .scene-card__toggle:hover {
-    transform: none;
-  }
-
-  .scene-card__copy h3 {
-    font-size: clamp(1.7rem, 11vw, 2.8rem);
   }
 
   .note-grid {
