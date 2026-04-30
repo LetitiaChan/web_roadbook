@@ -25,7 +25,11 @@
       <section class="hero frame" id="cover" data-scene="cover">
         <div class="hero__copy">
           <p class="eyebrow">Xining to Dunhuang · Road Movie</p>
-          <h1>追月之旅<br />青甘黑独山6日穿越</h1>
+          <h1 class="hero__title">
+            <span class="hero__title-line">追月之旅</span>
+            <span class="hero__title-line">青甘黑独山</span>
+            <span class="hero__title-line">6日穿越</span>
+          </h1>
           <p class="hero__line">从西宁出发，穿过盐湖、戈壁、黑山与沙海。</p>
         </div>
         <div class="hero__panel glass-panel">
@@ -35,16 +39,18 @@
         </div>
       </section>
 
-      <section class="route-board" aria-label="动态路线图">
+      <section class="route-board" aria-label="动态路线图" data-scene="cover">
         <div class="section-kicker">Route</div>
         <h2>路线逐段点亮</h2>
         <div class="route-map" id="routeMap"></div>
       </section>
 
-      <section class="story" id="story" aria-label="行程分镜">
+      <section class="story" id="story" aria-label="行程分镜" data-scene="story">
         <div class="story__sticky glass-panel">
           <p class="section-kicker">Timeline</p>
-          <h2 id="activeTitle">D1 茶卡盐湖</h2>
+          <h2 id="activeTitle">
+            <span class="active-title__line">D1 茶卡盐湖</span>
+          </h2>
           <p id="activeCaption">湖风把第一天吹成蓝色。</p>
           <div class="timeline-control">
             <label for="journeyRange">拖动快进旅程</label>
@@ -60,6 +66,9 @@
       </section>
 
       <section class="interlude frame" data-scene="food" id="food">
+        <figure class="interlude__visual">
+          <img src="assets/food.PNG" alt="青甘路上的美食集合" loading="lazy" decoding="async" />
+        </figure>
         <div class="interlude__content glass-panel">
           <p class="section-kicker">Food Roll</p>
           <h2>美食集合</h2>
@@ -70,7 +79,7 @@
       <section class="checklist frame" data-scene="back" id="checklist">
         <div class="checklist__content">
           <p class="section-kicker">Before Departure</p>
-          <h2>必备物品 & 注意事项</h2>
+          <h2>注意事项</h2>
           <div class="note-grid">
             <article>
               <h3>车与路</h3>
