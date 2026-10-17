@@ -357,7 +357,9 @@ h3 {
 
 .story__sticky {
   position: sticky;
-  top: 6rem;
+  /* 吸顶时垂直居中：中线减去面板自身半高（--sticky-half 由脚本测量写入）；
+     面板高于视口时 max() 会退化回 6rem 顶部对齐，避免顶部被裁 */
+  top: max(6rem, calc(50vh - var(--sticky-half, 11rem)));
   align-self: start;
   padding: clamp(1.2rem, 3vw, 2rem);
 }

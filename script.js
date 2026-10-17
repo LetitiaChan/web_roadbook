@@ -74,6 +74,7 @@ const sceneImages = {
 const dayNav = document.querySelector("#dayNav");
 const routeMap = document.querySelector("#routeMap");
 const storyFrames = document.querySelector("#storyFrames");
+const storySticky = document.querySelector(".story__sticky");
 const range = document.querySelector("#journeyRange");
 const ambientImage = document.querySelector("#ambientImage");
 const activeTitle = document.querySelector("#activeTitle");
@@ -84,6 +85,7 @@ const activeMileage = document.querySelector("#activeMileage");
 let currentIndex = 0;
 let manualScrollTimer = 0;
 let currentAmbientScene = "cover";
+let storyStickyObserver = 0;
 
 function createElement(tagName, className, text) {
   const element = document.createElement(tagName);
@@ -324,6 +326,7 @@ function setActiveScene(index, shouldScroll = false, updateAmbient = true) {
   currentIndex = nextIndex;
 
   renderActiveTitle(stop);
+  syncStoryStickyOffset();
   activeCaption.textContent = stop.caption;
   activeRoute.textContent = stop.route;
   activeMileage.textContent = stop.mileage;
@@ -391,6 +394,25 @@ function observeAmbientSections() {
   document.querySelectorAll("[data-scene]").forEach((section) => sectionObserver.observe(section));
 }
 
+function syncStoryStickyOffset() {
+  if (!storySticky) {
+    return;
+  }
+
+  storySticky.style.setProperty("--sticky-half", `${storySticky.offsetHeight / 2}px`);
+}
+
+function observeStoryStickySize() {
+  if (!storySticky) {
+    return;
+  }
+
+  syncStoryStickyOffset();
+  // 观察器需要被持有，否则会被回收、回调不再触发
+  storyStickyObserver = new ResizeObserver(syncStoryStickyOffset);
+  storyStickyObserver.observe(storySticky);
+}
+
 function bindRangeControl() {
   range.max = String(journey.length - 1);
   range.addEventListener("input", (event) => {
@@ -412,6 +434,7 @@ function init() {
   renderRouteMap();
   renderFrames();
   bindRangeControl();
+  observeStoryStickySize();
   setImageWithFallback(ambientImage, sceneImages.cover);
   observeJourneyFrames();
   observeAmbientSections();
