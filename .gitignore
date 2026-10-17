@@ -6,6 +6,7 @@ todo.md
 
 # Source/reference materials not used by the static site
 _assets/
+_assets_backup.zip
 
 # OS and editor noise
 .DS_Store
